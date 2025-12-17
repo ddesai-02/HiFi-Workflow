@@ -8,7 +8,7 @@ SAMPLES = {
     "WTD_RI": ("bc2001", "WhiteTail_RI"),
     "MD_837": ("bc2065", "Mule_837"),
     "WTD_EL": ("bc2066", "WhiteTail_EL"),
-    "WTD_Lacoste": ("bc2069", "WhiteTail_Lacoste"),
+    "WTD_La": ("bc2069", "WhiteTail_Lacoste"),
     "MD_838": ("bc2070", "Mule_838"),
 }
 
@@ -94,7 +94,7 @@ for desired_name, (barcode, full_name) in SAMPLES.items():
     input_file1 = matches1[0]
     input_file2 = matches2[0]
 
-    # --- 4b. Generate the script ---
+    # --- Generate the script ---
     script_name = f"submit_hifiasm_{desired_name}.sh"
     output_path = os.path.join(SCRIPT_OUTPUT_DIR, script_name)
 
@@ -113,6 +113,6 @@ for desired_name, (barcode, full_name) in SAMPLES.items():
 
     os.chmod(output_path, 0o755) # Make it executable
 
-    print(f"  Created: {script_name} with hardcoded inputs.")
+    print(f"  Created: {script_name}.")
 
-print("\nScript generation complete. All input files are now hardcoded, eliminating the BASH wildcard issue.")
+print("\nScript generation complete.")
